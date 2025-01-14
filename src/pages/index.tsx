@@ -11,14 +11,6 @@ interface Cliente {
   comercial: string;
 }
 
-interface Producto {
-  referencia: string;
-  descripcion: string;
-  precio: number;
-  foto: string;
-  fichaTecnica: string;
-}
-
 interface Pedido {
   numero: string;
   fecha: string;
@@ -50,7 +42,7 @@ export default function IndexPage() {
       <h1 className="text-2xl font-bold">Gesti\u00f3n de Pedidos</h1>
 
       {/* Formulario de Cliente */}
-      <Form>
+      <form>
         <FormItem>
           <FormLabel>Nombre del Cliente</FormLabel>
           <FormControl>
@@ -73,7 +65,7 @@ export default function IndexPage() {
           <FormMessage />
         </FormItem>
         <Button onClick={() => handleAddCliente({ id: "1", nombre: "Cliente Ejemplo", direccion: "Direcci\u00f3n Ejemplo", comercial: "Comercial Ejemplo" })}>A\u00f1adir Cliente</Button>
-      </Form>
+      </form>
 
       {/* Tabla de Pedidos */}
       <Table>
