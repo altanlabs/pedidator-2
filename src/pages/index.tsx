@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 interface Cliente {
   id: string;
@@ -46,17 +46,9 @@ export default function IndexPage() {
     setClientes([...clientes, cliente]);
   };
 
-  const handleAddProducto = (producto: Producto) => {
-    setProductos([...productos, producto]);
-  };
-
-  const handleAddPedido = (pedido: Pedido) => {
-    setPedidos([...pedidos, pedido]);
-  };
-
   return (
     <div className="container mx-auto px-4 py-16 space-y-8">
-      <h1 className="text-2xl font-bold">Gestión de Pedidos</h1>
+      <h1 className="text-2xl font-bold">Gesti\u00f3n de Pedidos</h1>
 
       {/* Formulario de Cliente */}
       <Form>
@@ -68,9 +60,9 @@ export default function IndexPage() {
           <FormMessage />
         </FormItem>
         <FormItem>
-          <FormLabel>Dirección</FormLabel>
+          <FormLabel>Direcci\u00f3n</FormLabel>
           <FormControl>
-            <Input type="text" placeholder="Dirección" />
+            <Input type="text" placeholder="Direcci\u00f3n" />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -81,14 +73,14 @@ export default function IndexPage() {
           </FormControl>
           <FormMessage />
         </FormItem>
-        <Button onClick={() => handleAddCliente({ id: "1", nombre: "Cliente Ejemplo", direccion: "Dirección Ejemplo", comercial: "Comercial Ejemplo" })}>Añadir Cliente</Button>
+        <Button onClick={() => handleAddCliente({ id: "1", nombre: "Cliente Ejemplo", direccion: "Direcci\u00f3n Ejemplo", comercial: "Comercial Ejemplo" })}>A\u00f1adir Cliente</Button>
       </Form>
 
       {/* Tabla de Pedidos */}
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Número de Pedido</TableHead>
+            <TableHead>N\u00famero de Pedido</TableHead>
             <TableHead>Fecha</TableHead>
             <TableHead>Cliente</TableHead>
             <TableHead>Productos</TableHead>
