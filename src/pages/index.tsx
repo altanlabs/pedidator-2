@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Form, FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 interface Cliente {
   id: string;
@@ -31,7 +31,6 @@ interface ProductoPedido {
 
 export default function IndexPage() {
   const [clientes, setClientes] = useState<Cliente[]>([]);
-  const [pedidos, setPedidos] = useState<Pedido[]>([]);
 
   const handleAddCliente = (cliente: Cliente) => {
     setClientes([...clientes, cliente]);
@@ -80,7 +79,8 @@ export default function IndexPage() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {pedidos.map((pedido, index) => (
+          {/* Example data, replace with actual data */}
+          {[]?.map((pedido, index) => (
             <TableRow key={index}>
               <TableCell>{pedido.numero}</TableCell>
               <TableCell>{pedido.fecha}</TableCell>
