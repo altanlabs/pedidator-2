@@ -39,7 +39,6 @@ interface ProductoPedido {
 
 export default function IndexPage() {
   const [clientes, setClientes] = useState<Cliente[]>([]);
-  const [productos, setProductos] = useState<Producto[]>([]);
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
 
   const handleAddCliente = (cliente: Cliente) => {
