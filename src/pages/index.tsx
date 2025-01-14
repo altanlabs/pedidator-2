@@ -32,6 +32,21 @@ interface ProductoPedido {
 export default function IndexPage() {
   const [clientes, setClientes] = useState<Cliente[]>([]);
 
+  const pedidos: Pedido[] = [
+    {
+      numero: "001",
+      fecha: "2025-01-14",
+      clienteId: "1",
+      clienteNombre: "Cliente Ejemplo",
+      productos: [
+        { referencia: "P001", descripcion: "Producto 1", cantidad: 2, precio: 100, descuento: 10 },
+        { referencia: "P002", descripcion: "Producto 2", cantidad: 1, precio: 200, descuento: 0 }
+      ],
+      observaciones: "Entrega urgente",
+      fechaEntrega: "2025-01-20"
+    }
+  ];
+
   const handleAddCliente = (cliente: Cliente) => {
     setClientes([...clientes, cliente]);
   };
@@ -79,8 +94,7 @@ export default function IndexPage() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {/* Example data, replace with actual data */}
-          {[]?.map((pedido: Pedido, index) => (
+          {pedidos.map((pedido: Pedido, index) => (
             <TableRow key={index}>
               <TableCell>{pedido.numero}</TableCell>
               <TableCell>{pedido.fecha}</TableCell>
